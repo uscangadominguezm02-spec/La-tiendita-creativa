@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Tiendita Creativa</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #34343237;
+    color: #292929;
+}
+h1, h2, h3, h4 {
+    font-family: Georgia, serif;
+}
+.seccion {
+    padding: 75px 0;
+}
+.navbar {
+    background: #191919 !important;
+    padding: 18px 0;
+}
+.navbar-brand {
+    color: #d5bd91 !important;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+.nav-link {
+    color: #ddd !important;
+    margin-left: 15px;
+    font-size: 14px;
+}
+.nav-link:hover {
+    color: #d5bd91 !important;
+}
+.navbar-toggler {
+    background: #d5bd91;
+}
+.btn-principal {
+    background: #a68a5b;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+}
+.btn-principal:hover {
+    background: #806941;
+    color: white;
+}
+/* PORTADA */
+.inicio {
+    background: #202020;
+    color: white;
+    padding: 110px 0;
+}
+.inicio h1 {
+    color: #e0c89e;
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+.inicio p {
+    color: #c4c4c4;
+    line-height: 1.8;
+    max-width: 480px;
+}
+.etiqueta {
+    color: #b49b70;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.portada-img {
+    min-height: 300px;
+    background: #35312b;
+    border: 1px solid #62523b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d5bd91;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+}
+/* PRODUCTOS */
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 34px;
+}
+.descripcion {
+    color: #777;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.card {
+    border: none;
+    border-radius: 0;
+    background: white;
+    height: 100%;
+    transition: .2s;
+}
+.card:hover {
+    transform: translateY(-4px);
+}
+.producto-img {
+    height: 190px;
+    background: #ded8cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #51483a;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+.card-body {
+    padding: 23px;
+}
+.card-title {
+    font-family: Georgia, serif;
+    font-size: 21px;
+}
+.card-text {
+    color: #777;
+    font-size: 14px;
+    min-height: 40px;
+}
+.precio {
+    font-weight: bold;
+    color: #96794b;
+    font-size: 18px;
+}
+/* NOSOTROS */
+.nosotros {
+    background: #222;
+    color: white;
+}
+.nosotros h2 {
+    color: #d5bd91;
+}
+.nosotros p {
+    color: #c5c5c5;
+    line-height: 1.9;
+}
+.nosotros-img {
+    height: 260px;
+    background: #38342e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d5bd91;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+/* CONTACTO */
+.contacto {
+    max-width: 650px;
+    margin: auto;
+}
+.form-control, .form-select {
+    border-radius: 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+/* PIE */
+footer {
+    background: #191919;
+    color: #bbb;
+    padding: 35px 10px;
+    text-align: center;
+}
+footer h4 {
+    color: #d5bd91;
+}
+footer a {
+    color: #d5bd91;
+    text-decoration: none;
+    margin: 8px;
+}
+/* CARRITO */
+.offcanvas {
+    background: #f3f0e9;
+}
+/* TOAST */
+.toast {
+    border-radius: 0;
+}
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .inicio {
+        padding: 65px 20px;
+    }
+
+    .inicio h1 {
+        font-size: 38px;
+    }
+
+    .portada-img {
+        margin-top: 35px;
+        min-height: 220px;
+    }
+
+    .seccion {
+        padding: 50px 18px;
+    }
+}
+</style>
+</head>
+<body>
+<div id="tienda">
+<!-- MENU -->
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+<a class="navbar-brand" href="#inicio">
+LA TIENDITA CREATIVA
+</a>
+<button class="navbar-toggler" data-bs-toggle="collapse"
+data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="#inicio">Inicio</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#productos">Catálogo</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#nosotros">Nosotros</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#contacto">Contacto</a>
+</li>
+</ul>
+<button class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0"
+id="verCarrito">
+Carrito (<span id="contador">0</span>)
+</button>
+</div>
+</div>
+</nav>
+<!-- PORTADA -->
+<section class="inicio" id="inicio">
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-md-6">
+
+<span class="etiqueta">CREATIVIDAD Y TRABAJO ARTESANAL</span>
+<h1>Detalles que hacen la diferencia.</h1>
+<p>
+Creamos productos hechos a mano, cuidando cada detalle
+para ofrecer artículos originales, prácticos y con
+un estilo propio.
+</p>
+<a href="#productos" class="btn btn-principal">
+Conocer catálogo
+</a>
+</div>
+<div class="col-md-6">
+<div class="portada-img">
+LA CREATIVIDAD<br>ESTÁ EN LOS DETALLES
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRODUCTOS -->
+<section class="container seccion" id="productos">
+<h2 class="titulo-seccion">Nuestro catálogo</h2>
+<p class="descripcion">
+Conoce los artículos disponibles en nuestra tienda.
+</p>
+<div class="row mb-4">
+<div class="col-md-6 mb-2">
+<input type="text" id="buscar" class="form-control"
+placeholder="Buscar artículo...">
+</div>
+<div class="col-md-6">
+<select id="categoria" class="form-select">
+<option value="todos">Todas las categorías</option>
+<option value="decoracion">Decoración</option>
+<option value="papeleria">Papelería</option>
+<option value="accesorios">Accesorios</option>
+</select>
+</div>
+</div>
+<div class="row g-4" id="listaProductos">
+<div class="col-md-4 producto" data-categoria="decoracion">
+<div class="card">
+<div class="producto-img">01 / VELA</div>
+<img src="MULTIMEDIA/IMAGENES/images.jpg" alt="Imagen1" srcset="" width="425" height="425">
+<div class="card-body">
+<h5 class="card-title">Vela aromática</h5>
+<p class="card-text">Elaborada para darle un ambiente agradable a cualquier espacio.</p>
+<p class="precio">$95 MXN</p>
+<button class="btn btn-principal w-100 agregar"
+data-nombre="Vela aromática" data-precio="95">
+Agregar al carrito
+</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 producto" data-categoria="papeleria">
+<div class="card">
+<div class="producto-img">02 / LIBRETA</div>
+<img src="MULTIMEDIA/IMAGENES/images (1).jpg" alt="imagen2" srcset="" width="425" height="425">
+<div class="card-body">
+<h5 class="card-title">Libreta decorada</h5>
+<p class="card-text">Libretas personalizadas para organizar tus ideas y apuntes.</p>
+<p class="precio">$80 MXN</p>
+<button class="btn btn-principal w-100 agregar"
+data-nombre="Libreta decorada" data-precio="80">
+Agregar al carrito
+</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 producto" data-categoria="decoracion">
+<div class="card">
+<div class="producto-img">03 / MACETA</div>
+<img src="MULTIMEDIA/IMAGENES/images (2).jpg" alt="imagen3" srcset="" width="425" height="425">
+<div class="card-body">
+<h5 class="card-title">Maceta pintada</h5>
+<p class="card-text">Piezas decoradas a mano con diferentes diseños.</p>
+<p class="precio">$120 MXN</p>
+<button class="btn btn-principal w-100 agregar"
+data-nombre="Maceta pintada" data-precio="120">
+Agregar al carrito
+</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 producto" data-categoria="accesorios">
+<div class="card">
+<div class="producto-img">04 / BOLSA</div>
+<img src="MULTIMEDIA/IMAGENES/images (3).jpg" alt="imagen4" srcset="" width="425" height="425">
+<div class="card-body">
+<h5 class="card-title">Tote bag</h5>
+<p class="card-text">Bolsas de tela con diseños originales y prácticos.</p>
+<p class="precio">$150 MXN</p>
+<button class="btn btn-principal w-100 agregar"
+data-nombre="Tote bag" data-precio="150">
+Agregar al carrito
+</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 producto" data-categoria="papeleria">
+<div class="card">
+<div class="producto-img">05 / PAPELERÍA</div>
+<img src="MULTIMEDIA/IMAGENES/images (4).jpg" alt="imagen5" width="425" height="425">
+<div class="card-body">
+<h5 class="card-title">Separadores</h5>
+<p class="card-text">Accesorios para darle un toque personal a tus libros.</p>
+<p class="precio">$35 MXN</p>
+<button class="btn btn-principal w-100 agregar"
+data-nombre="Separadores" data-precio="35">
+Agregar al carrito
+</button>
+</div>
+</div>
+</div>
+<div class="col-md-4 producto" data-categoria="accesorios">
+<div class="card">
+<div class="producto-img">06 / PULSERA</div>
+<img src="MULTIMEDIA/IMAGENES/images (5).jpg" alt="imagen6" width="425" height="425">
+<div class="card-body">
+<h5 class="card-title">Pulsera artesanal</h5>
+<p class="card-text">Accesorios elaborados a mano con distintos materiales.</p>
+<p class="precio">$60 MXN</p>
+<button class="btn btn-principal w-100 agregar"
+data-nombre="Pulsera artesanal" data-precio="60">
+Agregar al carrito
+</button>
+</div>
+</div>
+</div>
+</div>
+<p id="sinProductos" class="text-center mt-4" hidden>
+No se encontraron productos.
+</p>
+</section>
+<!-- NOSOTROS -->
+<section class="nosotros seccion" id="nosotros">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-5">
+<div class="nosotros-img">
+HECHO A MANO
+</div>
+</div>
+<div class="col-md-7 mt-4 mt-md-0">
+<span class="etiqueta">NUESTRA HISTORIA</span>
+<h2>Un proyecto con identidad propia.</h2>
+<p>
+La Tiendita Creativa nació como un emprendimiento
+escolar enfocado en la elaboración de productos
+artesanales.
+</p>
+<p>
+Comenzamos ofreciendo nuestros artículos en ferias
+y bazares. Ahora buscamos tener un espacio donde
+nuestros clientes puedan conocer el catálogo,
+consultar precios y realizar pedidos de una manera
+más sencilla.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACTO -->
+<section class="container seccion" id="contacto">
+<div class="contacto text-center">
+<h2 class="titulo-seccion">Contacto</h2>
+<p class="descripcion">
+Para dudas o información sobre nuestros productos,
+puedes dejarnos un mensaje.
+</p>
+<button class="btn btn-principal"
+data-bs-toggle="modal" data-bs-target="#modalContacto">
+Enviar mensaje
+</button>
+</div>
+</section>
+<!-- MODAL -->
+<div class="modal fade" id="modalContacto" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5>Formulario de contacto</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<form id="formulario" novalidate>
+<label class="form-label">Nombre</label>
+<input type="text" id="nombre" class="form-control"
+required minlength="2">
+<div class="invalid-feedback">Escribe tu nombre.</div>
+<label class="form-label mt-3">Correo</label>
+<input type="email" id="correo" class="form-control"
+required>
+<div class="invalid-feedback">Escribe un correo válido.</div>
+<label class="form-label mt-3">Mensaje</label>
+<textarea id="mensaje" class="form-control"
+required minlength="8"></textarea>
+<div class="invalid-feedback">Escribe un mensaje.</div>
+<button class="btn btn-principal mt-3" type="submit">
+Enviar
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- CARRITO -->
+<div class="offcanvas offcanvas-end" id="panelCarrito">
+<div class="offcanvas-header">
+<h5>Carrito de compras</h5>
+<button class="btn-close" data-bs-dismiss="offcanvas"></button>
+</div>
+<div class="offcanvas-body">
+<div id="contenidoCarrito">Tu carrito está vacío.</div>
+<hr>
+<h5>Total: $<span id="total">0</span> MXN</h5>
+<button class="btn btn-principal w-100 mt-3"
+id="finalizar" disabled>
+Finalizar pedido
+</button>
+</div>
+</div>
+<!-- TOAST -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+<div class="toast" id="aviso">
+<div class="toast-body">
+Artículo agregado al carrito.
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<h4>LA TIENDITA CREATIVA</h4>
+<p>Productos artesanales y detalles originales.</p>
+<div>
+<a href="#inicio">Inicio</a>
+<a href="#productos">Catálogo</a>
+<a href="#contacto">Contacto</a>
+</div>
+<p class="mt-3">
+Visitas a la página: <span id="visitas">0</span>
+</p>
+</footer>
+<button id="subir">↑</button>
+</div>
+<!-- AGRADECIMIENTO -->
+<section id="gracias" class="container seccion text-center" hidden>
+<h1>Pedido realizado</h1>
+<p>Gracias por elegir La Tiendita Creativa.</p>
+<button class="btn btn-principal" id="volver">
+Regresar a la tienda
+</button>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Carrito
+let carrito = [];
+function actualizarCarrito() {
+    let total = 0;
+    let cantidad = 0;
+    let contenido = "";
+    carrito.forEach((producto, indice) => {
+        total += producto.precio * producto.cantidad;
+        cantidad += producto.cantidad;
+        contenido += `
+        <div class="border-bottom py-3">
+            <strong>${producto.nombre}</strong>
+            <p>${producto.cantidad} x $${producto.precio}</p>
+            <button class="btn btn-sm btn-danger"
+            onclick="eliminar(${indice})">
+            Quitar
+            </button>
+        </div>`;
+    });
+    document.getElementById("contador").textContent = cantidad;
+    document.getElementById("total").textContent = total;
+
+    document.getElementById("contenidoCarrito").innerHTML =
+    contenido || "Tu carrito está vacío.";
+
+    document.getElementById("finalizar").disabled =
+    carrito.length === 0;
+}
+// Agregar productos
+document.querySelectorAll(".agregar").forEach(boton => {
+
+    boton.addEventListener("click", () => {
+
+        let nombre = boton.dataset.nombre;
+        let precio = Number(boton.dataset.precio);
+
+        let producto = carrito.find(p => p.nombre === nombre);
+
+        if(producto) {
+            producto.cantidad++;
+        } else {
+            carrito.push({
+                nombre: nombre,
+                precio: precio,
+                cantidad: 1
+            });
+        }
+
+        actualizarCarrito();
+
+        bootstrap.Toast.getOrCreateInstance(
+            document.getElementById("aviso")
+        ).show();
+
+    });
+});
+// Eliminar
+function eliminar(indice) {
+    carrito.splice(indice, 1);
+    actualizarCarrito();
+}
+// Abrir carrito
+document.getElementById("verCarrito").onclick = () => {
+
+    bootstrap.Offcanvas.getOrCreateInstance(
+        document.getElementById("panelCarrito")
+    ).show();
+
+};
+// Buscar y filtrar
+function filtrar() {
+
+    let texto = document.getElementById("buscar")
+    .value.toLowerCase();
+
+    let categoria = document.getElementById("categoria").value;
+
+    let productos = document.querySelectorAll(".producto");
+    let encontrados = 0;
+
+    productos.forEach(producto => {
+
+        let nombre = producto.textContent.toLowerCase();
+
+        let coincide = nombre.includes(texto);
+
+        let categoriaCorrecta =
+        categoria === "todos" ||
+        producto.dataset.categoria === categoria;
+
+        producto.hidden = !(coincide && categoriaCorrecta);
+
+        if(coincide && categoriaCorrecta) encontrados++;
+
+    });
+
+    document.getElementById("sinProductos").hidden =
+    encontrados > 0;
+}
+document.getElementById("buscar").addEventListener("input", filtrar);
+document.getElementById("categoria").addEventListener("change", filtrar);
+// Formulario
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+    if(!this.checkValidity()) {
+        this.classList.add("was-validated");
+        return;
+    }
+    alert("Mensaje registrado correctamente.");
+    this.reset();
+    this.classList.remove("was-validated");
+    bootstrap.Modal.getOrCreateInstance(
+        document.getElementById("modalContacto")
+    ).hide();
+});
+// Contador de visitas
+let visitas = Number(localStorage.getItem("visitas")) || 0;
+visitas++;
+localStorage.setItem("visitas", visitas);
+document.getElementById("visitas").textContent = visitas;
+// Finalizar pedido
+document.getElementById("finalizar").onclick = () => {
+
+    if(carrito.length === 0) return;
+
+    bootstrap.Offcanvas.getInstance(
+        document.getElementById("panelCarrito")
+    ).hide();
+
+    document.getElementById("tienda").hidden = true;
+    document.getElementById("gracias").hidden = false;
+
+    carrito = [];
+    actualizarCarrito();
+
+    window.scrollTo(0, 0);
+
+};
+// Volver
+document.getElementById("volver").onclick = () => {
+
+    document.getElementById("gracias").hidden = true;
+    document.getElementById("tienda").hidden = false;
+
+    window.scrollTo(0, 0);
+
+};
+</script>
+</body>
+</html>
